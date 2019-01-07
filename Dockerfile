@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13
+FROM ubuntu:18.04
 LABEL maintainer="William Riley <docker-ebt@kummallinen.co.uk>"
 
 #
@@ -56,7 +56,12 @@ RUN apt-get update -qqy \
     python python-pip \
     rsync \
     gpg-agent \
-  && rm -rf /var/lib/apt/lists/*
+    openjdk-8-jdk openjfx\
+  && rm -rf /var/lib/apt/lists/* \
+  && sed -i 's/securerandom\.source=file:\/dev\/random/securerandom\.source=file:\/dev\/urandom/' ./usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security
+
+# workaround https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=775775
+RUN [ -f "/etc/ssl/certs/java/cacerts" ] || /var/lib/dpkg/info/ca-certificates-java.postinst configure
 
 # Make sure pip up to date
 RUN pip install --upgrade pip setuptools

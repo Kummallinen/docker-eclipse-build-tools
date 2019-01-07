@@ -11,7 +11,8 @@ This Docker image is intended to be used with the [Jenkins Docker Pipeline Plugi
 -   Common tools: openssh-client, unzip, wget, curl, git, jq, rsync
 -   Ant 1.10.5
 -   gcc (latest): 7.3.0
--   Java: OpenJDK 11 With OpenJ9 11.0.1+git 13
+-   Java: OpenJDK 8u191-b12
+-   OpenJFX: 8u161-b12
 -   Make (latest): 4.1
 -   Maven located in `/usr/share/maven/`: 3.6.0
 -   Python: 3.6.7-1
