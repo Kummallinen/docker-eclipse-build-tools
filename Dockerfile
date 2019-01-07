@@ -100,8 +100,7 @@ RUN apt-get update -qqy \
 #========================================
 # Add normal user with passwordless sudo
 #========================================
-RUN useradd jenkins --shell /bin/bash --create-home \
-  && usermod -a -G sudo jenkins
+RUN useradd jenkins --shell /bin/bash --create-home
 
 USER jenkins
 
