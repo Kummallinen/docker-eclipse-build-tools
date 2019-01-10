@@ -53,13 +53,9 @@ RUN apt-get update -qqy \
     build-essential \
     less nano tree \
     jq \
-    python python-pip \
     rsync \
     gpg-agent \
   && rm -rf /var/lib/apt/lists/*
-
-# Make sure pip up to date
-RUN pip install --upgrade pip setuptools
 
 #==========
 # Maven
@@ -93,7 +89,7 @@ RUN apt-get update -qqy \
   && rm -rf /var/lib/apt/lists/*
 
 #========================================
-# Add normal user with passwordless sudo
+# Add user for jenkins
 #========================================
 RUN useradd jenkins --shell /bin/bash --create-home
 
