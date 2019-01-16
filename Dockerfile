@@ -56,6 +56,7 @@ RUN apt-get update -qqy \
     python python-pip \
     rsync \
     gpg-agent \
+    libgtk-3-0 \
   && rm -rf /var/lib/apt/lists/*
 
 # Make sure pip up to date
