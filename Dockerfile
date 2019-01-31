@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11-openj9:jdk-11.0.1.13
+FROM adoptopenjdk/openjdk11-openj9:x86_64-ubuntu-jdk-11.0.2.9
 LABEL maintainer="William Riley <docker-ebt@kummallinen.co.uk>"
 
 #
@@ -94,7 +94,7 @@ RUN apt-get update -qqy \
   && rm -rf /var/lib/apt/lists/*
 
 #========================================
-# Add normal user with passwordless sudo
+# Add normal user for Jenkins
 #========================================
 RUN useradd jenkins --shell /bin/bash --create-home
 
