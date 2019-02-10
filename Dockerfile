@@ -49,7 +49,7 @@ RUN apt-get update -qqy \
     ca-certificates \
     tar zip unzip p7zip \
     wget curl \
-    git \
+    git git-lfs\
     build-essential \
     less nano tree \
     jq \
