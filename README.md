@@ -8,7 +8,7 @@ This Docker image is intended to be used with the [Jenkins Docker Pipeline Plugi
 
 # Versions
 -   OS: Ubuntu 18.04
--   Common tools: openssh-client, unzip, wget, curl, git, jq, rsync, p7zip
+-   Common tools: openssh-client, unzip, wget, curl, git, git-lfs, jq, rsync, p7zip
 -   Ant 1.10.5
 -   gcc (latest): 7.3.0
 -   Java: OpenJDK 11 With OpenJ9 11.0.2+9
