@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11-openj9:x86_64-ubuntu-jdk-11.0.2.9
+FROM adoptopenjdk:11.0.5_10-jdk-openj9-0.17.0-bionic
 LABEL maintainer="William Riley <docker-ebt@kummallinen.co.uk>"
 
 #
@@ -65,7 +65,7 @@ RUN pip install --upgrade pip setuptools
 #==========
 # Maven
 #==========
-ENV MAVEN_VERSION 3.6.0
+ENV MAVEN_VERSION 3.6.2
 
 RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
   && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
@@ -77,7 +77,7 @@ ENV MAVEN_HOME /usr/share/maven
 # Ant
 #==========
 
-ENV ANT_VERSION 1.10.5
+ENV ANT_VERSION 1.10.7
 
 RUN curl -fsSL https://www.apache.org/dist/ant/binaries/apache-ant-$ANT_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
   && mv /usr/share/apache-ant-$ANT_VERSION /usr/share/ant \
