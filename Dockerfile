@@ -57,7 +57,14 @@ RUN apt-get update -qqy \
     rsync \
     gpg-agent \
     libgtk-3-0 \
+    locales \
   && rm -rf /var/lib/apt/lists/*
+
+RUN locale-gen en_US.UTF-8
+# Need locale to be UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # Make sure pip up to date
 RUN pip install --upgrade pip setuptools
