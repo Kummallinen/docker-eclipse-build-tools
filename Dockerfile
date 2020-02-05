@@ -56,12 +56,19 @@ RUN apt-get update -qqy \
     python python-pip \
     rsync \
     gpg-agent \
-    openjdk-8-jdk openjfx\
+    openjdk-8-jdk openjfx \
+    locales \
   && rm -rf /var/lib/apt/lists/* \
   && sed -i 's/securerandom\.source=file:\/dev\/random/securerandom\.source=file:\/dev\/urandom/' ./usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security
 
 # workaround https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=775775
 RUN [ -f "/etc/ssl/certs/java/cacerts" ] || /var/lib/dpkg/info/ca-certificates-java.postinst configure
+
+RUN locale-gen en_US.UTF-8
+# Need locale to be UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # Make sure pip up to date
 RUN pip install --upgrade pip setuptools
