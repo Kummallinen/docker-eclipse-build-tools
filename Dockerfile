@@ -56,7 +56,7 @@ RUN apt-get update -qqy \
     python python-pip \
     rsync \
     gpg-agent \
-    openjdk-8-jdk openjfx \
+    openjdk-8-jdk openjfx=8u161-b12-1ubuntu2 libopenjfx-jni=8u161-b12-1ubuntu2 libopenjfx-java=8u161-b12-1ubuntu2 \
     locales \
   && rm -rf /var/lib/apt/lists/* \
   && sed -i 's/securerandom\.source=file:\/dev\/random/securerandom\.source=file:\/dev\/urandom/' ./usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security
