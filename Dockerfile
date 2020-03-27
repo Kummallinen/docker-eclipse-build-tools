@@ -1,4 +1,4 @@
-FROM adoptopenjdk:11.0.5_10-jdk-openj9-0.17.0-bionic
+FROM adoptopenjdk:11.0.6_10-jdk-hotspot-bionic
 LABEL maintainer="William Riley <docker-ebt@kummallinen.co.uk>"
 
 #
